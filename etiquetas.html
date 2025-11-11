@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador de Etiquetas BP</title>
+
+  <link rel="icon" type="image/png" href="etiqueta.webp" sizes="32x32">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="etiqueta.webp">
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Generador de Etiquetas</h1>
+
+    <div class="opciones">
+      <label for="barcodeType">Formato de código:</label>
+      <select id="barcodeType">
+        <option value="" selected>Seleccione formato</option>
+        <option value="EAN13">EAN-13</option>
+        <option value="EAN8">EAN-8</option>
+        <option value="ITF14">EAN-14 (ITF-14)</option>
+        <option value="UPC">UPC</option>
+      </select>
+      <button onclick="addRow()">Agregar fila</button>
+      <button onclick="generatePDF()">Generar PDF</button>
+    </div>
+
+    <table id="tabla">
+      <thead>
+        <tr>
+          <th>Sucursal</th>
+          <th>Área</th>
+          <th>O/C</th>
+          <th>Código de Barras</th>
+          <th>Cantidad</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td contenteditable="true" data-placeholder="Ingrese Sucursal"></td>
+          <td contenteditable="true" data-placeholder="Ingrese Área"></td>
+          <td contenteditable="true" data-placeholder="Ingrese O/C"></td>
+          <td contenteditable="true" data-placeholder="Ingrese Código"></td>
+          <td contenteditable="true" data-placeholder="Cantidad"></td>
+          <td><button onclick="deleteRow(this)">✖</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <canvas id="barcodeCanvas" style="display:none;"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
