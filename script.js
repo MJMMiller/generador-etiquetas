@@ -106,6 +106,9 @@ async function generatePDF() {
     return;
   }
 
+  // === NUEVO: Obtener el título desde el input ===
+  const titulo = document.getElementById("tituloCompania").value.trim() || " ";
+
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({ unit: "cm", format: "a4" });
 
@@ -172,10 +175,10 @@ async function generatePDF() {
       doc.setLineWidth(0.05);
       doc.rect(x, y, etiquetaW, etiquetaH);
 
-      // === Encabezado ===
+      // === Encabezado (TÍTULO DINÁMICO) ===
       doc.setFont("helvetica", "bold");
       doc.setFontSize(13);
-      doc.text("CORPORACION BP CIA LTDA", x + etiquetaW / 2, y + 0.9, { align: "center" });
+      doc.text(titulo, x + etiquetaW / 2, y + 0.9, { align: "center" });
 
       // === Sucursal y O/C ===
       doc.setFontSize(10);
@@ -223,5 +226,6 @@ async function generatePDF() {
     }
   }
 
-  doc.save(`etiquetas_BP_${formato}.pdf`);
+  // === Guardar el PDF final ===
+  doc.save(`etiquetas_${formato}.pdf`);
 }

@@ -85,3 +85,143 @@ td[contenteditable="true"]:empty::before {
 .row-error td::before {
   color: #e11d48 !important;
 }
+.input-titulo {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.input-titulo label {
+  font-weight: 600;
+  margin-right: 8px;
+  color: #1d428a;
+}
+
+.input-titulo input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  width: 280px;
+  max-width: 90%;
+}
+@media (max-width: 992px) {
+  .contenedor {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .opciones {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  select, button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  table th, table td {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .input-titulo input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .contenedor {
+    padding: 15px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .opciones {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .input-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .input-titulo label {
+    margin-bottom: 5px;
+  }
+
+  .input-titulo input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  select, button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    border: none;
+    white-space: nowrap;
+  }
+
+  table th, table td {
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  td[contenteditable="true"]:empty::before {
+    left: 5px;
+    top: 5px;
+    font-size: 13px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  .contenedor {
+    border-radius: 8px;
+  }
+
+  select, button {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  table th, table td {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  td button {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+}
