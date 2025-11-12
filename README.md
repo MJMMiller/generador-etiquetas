@@ -22,3 +22,8 @@ El sistema automatiza la creación de etiquetas que incluyen información como s
 - **Python-Barcode** → para la generación de códigos de barras.  
 
 ---
+
+### 🌐 Pagina Web Publicada
+- [generador-etiquetas](https://mjmmiller.github.io/generador-etiquetas/)
+  
+---
